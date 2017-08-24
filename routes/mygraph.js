@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     
-    res.render('mychart', {jsonData: "", axis: ""});
+    res.render('mygraph', {jsonData: "", axis: ""});
 });
 
 router.post('/', function(req, res, next){
@@ -19,13 +19,13 @@ router.post('/', function(req, res, next){
         returnData = FindChartDetails(selectedGraph, data);
 
         if(returnData["jsFile"] != null){
-            res.render('mychart', {ChartTitle: selectedGraph,
+            res.render('mygraph', {ChartTitle: selectedGraph,
                 jsonData: dataString, 
                 axis: JSON.stringify(returnData["axis"]), 
                 jsFile: returnData["jsFile"],
                 cssFile: returnData["cssFile"]});
         }else{
-           res.render('mychart', {ChartTitle: "Sorry, Still working on this chart.",
+           res.render('mygraph', {ChartTitle: "Sorry, Still working on this chart.",
                 jsonData: "", 
                 axis: "", 
                 jsFile: "",
@@ -34,7 +34,7 @@ router.post('/', function(req, res, next){
 
         
     }else{
-        res.render('mychart', {ChartTitle: "Sorry, Json data wasn't valid.",
+        res.render('mygraph', {ChartTitle: "Sorry, Json data wasn't valid.",
                 jsonData: "", 
                 axis: "", 
                 jsFile: "",

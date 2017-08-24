@@ -9,7 +9,7 @@ var index = require('./routes/index');
 var dev = require('./routes/developers');
 var collection = require('./routes/collection');
 var graphs = require('./routes/graphs');
-var mychart = require('./routes/mychart');
+var mygraph = require('./routes/mygraph');
 var validate = require('./routes/validate');
 
 var BarTemplate1 = require('./routes/GraphSamplesRoutes/BarTemplate1');
@@ -47,7 +47,7 @@ app.use('/', index);
 app.use('/collection', collection)
 app.use('/developers', dev);
 app.use('/graphs',graphs);
-app.use('/mychart', mychart);
+app.use('/mygraph', mygraph);
 app.use('/validate', validate);
 
 app.use('/GraphSamples/BarTemplate1', BarTemplate1);
