@@ -7,7 +7,7 @@ window.onload = function () {
     var data = JSON.parse(document.getElementById('data').innerHTML);
     var axis = JSON.parse(document.getElementById('axis').innerHTML);
 
-    var vis = d3.select("body").append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+    var vis = d3.select(".GraphClass").append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
     var pie = d3.layout.pie().value(function (d) {
         console.log(d[axis.y]);
         return d[axis.y];
