@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var dev = require('./routes/developers');
 var collection = require('./routes/collection');
+var graphs = require('./routes/graphs');
+var mychart = require('./routes/mychart');
+var validate = require('./routes/validate');
 
 var BarTemplate1 = require('./routes/GraphSamplesRoutes/BarTemplate1');
 var StackBarTemplate = require('./routes/GraphSamplesRoutes/StackBarTemplate');
@@ -26,9 +29,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(async (req, res, next) => {
+  if (! app.db) {
+    const mysql = require('mysql2/promise');
+    app.db = await mysql.createPool({
+      connectionLimit: 50,
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'charts' });
+  }
+  req.db = app.db;
+  return next();
+});
+
 app.use('/', index);
 app.use('/collection', collection)
 app.use('/developers', dev);
+app.use('/graphs',graphs);
+app.use('/mychart', mychart);
+app.use('/validate', validate);
 
 app.use('/GraphSamples/BarTemplate1', BarTemplate1);
 app.use('/GraphSamples/StackBarTemplate', StackBarTemplate);
