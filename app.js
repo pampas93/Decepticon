@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(async (req, res, next) => {
+/*app.use(async (req, res, next) => {
   if (! app.db) {
     const mysql = require('mysql2/promise');
     app.db = await mysql.createPool({
@@ -38,6 +38,21 @@ app.use(async (req, res, next) => {
       user: 'root',
       password: '',
       database: 'charts' });
+  }
+  req.db = app.db;
+  return next();
+});*/
+
+app.use(async (req, res, next) => {
+  if (!app.db) {
+    const mysql = require('mysql2/promise');
+    app.db = await mysql.createPool({
+      connectionLimit: 50,
+      host: 'decepticoninstance.c3rlabfn5nqp.us-west-1.rds.amazonaws.com',
+      user: 'testUser',
+      password: 'testuser123',
+      database: 'DecepticonDB'
+    });
   }
   req.db = app.db;
   return next();
