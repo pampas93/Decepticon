@@ -12,8 +12,9 @@ var graphs = require('./routes/graphs');
 var mygraph = require('./routes/mygraph');
 var validate = require('./routes/validate');
 
-var BarTemplate1 = require('./routes/GraphSamplesRoutes/BarTemplate1');
-var StackBarTemplate = require('./routes/GraphSamplesRoutes/StackBarTemplate');
+var BarTemplate1 = require('./routes/GraphSamples/BarTemplate1');
+var StackBarTemplate = require('./routes/GraphSamples/StackBarTemplate');
+var Pie = require('./routes/GraphSamples/PieTemplate');
 
 var app = express();
 
@@ -67,6 +68,7 @@ app.use('/validate', validate);
 
 app.use('/GraphSamples/BarTemplate1', BarTemplate1);
 app.use('/GraphSamples/StackBarTemplate', StackBarTemplate);
+app.use('/GraphSamples/PieTemplate', Pie);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

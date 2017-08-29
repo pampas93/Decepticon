@@ -4,54 +4,65 @@
 <head>
   <title>Graph Collection</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/graphCollection.css' />
+  <link rel='stylesheet' href='/stylesheets/collection.css' />
 
   <style>
-      h1{text-align: center}
-    </style>
+    h1 {
+      text-align: center
+    }
+  </style>
 </head>
 
 <body>
   <% var data= "CollectionPage" %>
     <% include templates/header.ejs %>
 
-      <div class="container">
+      <div class="container" style="min-height:800px;text-align: center;">
         <div class="row">
-          <div class="col-sm-1 col-md-1 col-lg-1">
+          <br>
+          <h1><b>Our Graph Collection</b></h1>
+          <br><br>
+
+          <!-- <div class="col-sm-1 col-md-1 col-lg-1" >
           </div>
 
-          <div class="col-sm-10 col-md-10 col-lg-10">
+          <div class="col-sm-10 col-md-10 col-lg-10" style="min-height:600px;text-align: center;background: #b3d4fc;" >
 
-            <h1><b>Our Graph Collection</b></h1>
-            <br><br>
+            <div class="container" >
+              <div class="row"> -->
 
-            <div class="container" style="min-height:600px;">
-              <div class="row">
-                
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                  <div class="tile">
-                    <img src="/images/GraphSamples/BarType1.jpg" class="image">
-                    <div class="overlay">
-                      <a href="GraphSamples/BarTemplate1" class="purple text">Bar Graph (type1)</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                  <div class="tile">
-                    <img src="/images/GraphSamples/StackBar.jpg" class="image">
-                    <div class="overlay">
-                      <a href="GraphSamples/StackBarTemplate" class="purple text">Stack Bar Graph</a>
-                    </div>
-                  </div>
-                </div>
-
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="tile">
+              <img src="/images/GraphSamples/BarType1.jpg" class="image">
+              <div class="overlay">
+                <a href="GraphSamples/BarTemplate1" class="purple text">Bar Graph (type1)</a>
               </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="tile">
+              <img src="/images/GraphSamples/StackBar.jpg" class="image">
+              <div class="overlay">
+                <a href="GraphSamples/StackBarTemplate" class="purple text">Stack Bar Graph</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="tile">
+              <img src="/images/GraphSamples/PieChart.jpg" class="image">
+              <div class="overlay">
+                <a href="GraphSamples/PieTemplate" class="purple text">Pie Chart</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- </div>
             </div>
 
           </div>
 
           <div class="col-sm-1 col-md-1 col-lg-1">
-          </div>
+          </div> -->
         </div>
       </div>
 
