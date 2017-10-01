@@ -1,6 +1,6 @@
 {
   "name": "decepticon",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -14,5 +14,12 @@
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
     "mysql2": "^1.4.0"
+  },
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/pampas93/Decepticon"
+  },
+  "engines": {
+    "node": "8.3.0"
   }
 }
