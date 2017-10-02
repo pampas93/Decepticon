@@ -49,10 +49,10 @@ app.use(async (req, res, next) => {
     const mysql = require('mysql2/promise');
     app.db = await mysql.createPool({
       connectionLimit: 50,
-      host: 'decepticoninstance.c3rlabfn5nqp.us-west-1.rds.amazonaws.com',
-      user: 'testUser',
-      password: 'testuser123',
-      database: 'DecepticonDB'
+      host: 'sql9.freemysqlhosting.net',
+      user: 'sql9197276',
+      password: 'LAjKNuykNL',
+      database: 'sql9197276'
     });
   }
   req.db = app.db;
